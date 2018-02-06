@@ -4,8 +4,12 @@
 from bottle import default_app, route, static_file
 import os, os.path
 
-ROOT = "/home/vysoky/seminar"   # where are files serving from 
+ROOT = "/home/terka1234"   # where are files serving from
 PATH_PREFIX = "/files"          # path prefix in browser
+
+@route('/')
+def hello_world():
+    return '<h1>Ahoj všichni!<h1/>'
 
 @route(PATH_PREFIX)
 @route(PATH_PREFIX + '<filepath:path>')
@@ -52,4 +56,3 @@ def server_static(filepath="/"):
 
 
 application = default_app()
-
